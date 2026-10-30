@@ -1,9 +1,3 @@
-# all_recipies = [
-#     ("omelete", {"arroz", "carne", "miojo"}),
-#     ("omelete duplo", {"arroz", "feijão", "banana", "pessego"}),
-#     ("cafe", {"cafe"})
-# ]
-
 # # print(all_recipies)
 # # print(all_recipies[1])
 # # print(all_recipies[1][2])
@@ -25,11 +19,11 @@
 #     print(f"- {ingredient}")
 
 
-# # mostrando o que o usuário tem na geladeira
-# # todas as receitas
-
-
-# # cada receita
+recipies = [
+    ("omelete", {"ovo", "tomate", "pimentão"}),
+    ("salada", {"alface", "tomate", "pimentão", "cebola"}),
+    ("cafe", {"cafe"})
+]
 
 user_name = input("Digite seu nome: ").capitalize().strip()
 while (len(user_name) <= 1 or any(caractere.isdigit() for caractere in user_name)):
@@ -41,9 +35,29 @@ print()
 while True:
     menu_options = input(
         f"O que deseja hoje, {user_name}?\n"
-        "1 - Adicionar uma nova receita").strip()
+        "1 - Adicionar uma nova receita\n"
+        "2 - Procurar receitas\n"
+        "3 - Visualizar receitas\n"
+        "4 - Sair\n"
+        ": "
+    ).strip()
     match menu_options:
         case "1":
+            while True:
+                add_recipe_name = input("Digite o nome da receita que deseja criar.\nPara sair, digite 'Q'\n: ").strip()
+                if add_recipe_name.lower() in ("sair", "cancelar", "s", "não"):
+                    break
+
+                if not add_recipe_name:
+                    print("sem nome")
+        
+        case "2":
+            break
+        
+        case "3":
+            break
+        
+        case "4":
             break
         
         case _:
