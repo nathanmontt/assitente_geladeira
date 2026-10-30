@@ -31,12 +31,17 @@
 
 # # cada receita
 
-
-
-print("assistente de geladeira")
+user_name = input("Digite seu nome: ").capitalize().strip()
+while (len(user_name) <= 1 or any(caractere.isdigit() for caractere in user_name)):
+    user_name = input("Nome com caracteres inferiores Digite seu nome: ")
+    
+print("GELY, sua Assistente de Geladeira Inteligente")
+print()
 
 while True:
-    menu_options = input("opções").strip()
+    menu_options = input(
+        f"O que deseja hoje, {user_name}?\n"
+        "1 - Adicionar uma nova receita").strip()
     match menu_options:
         case "1":
             break
