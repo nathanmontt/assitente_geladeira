@@ -45,11 +45,11 @@ while True:
         case "1":
             while True:
                 add_recipe_name = input("Digite o nome da receita que deseja criar.\nPara sair, digite 'Q'\n: ").strip()
-                if add_recipe_name.lower() in ("sair", "cancelar", "s", "não"):
+                if add_recipe_name.lower() in "q":
                     break
 
-                if not add_recipe_name:
-                    print("sem nome")
+                if not add_recipe_name or (len(add_recipe_name) <= 3 or any(caractere.isdigit() for caractere in add_recipe_name)):
+                    print("Nome inválido ou muito pequeno")
         
         case "2":
             break
