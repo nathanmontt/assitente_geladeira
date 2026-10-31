@@ -19,10 +19,12 @@
 #     print(f"- {ingredient}")
 
 
-recipies = [
-    ("omelete", {"ovo", "tomate", "pimentão"}),
-    ("salada", {"alface", "tomate", "pimentão", "cebola"}),
-    ("cafe", {"cafe"})
+recipe_name = ()
+recipe_ingredients = {}
+all_recipies = [
+    # ("omelete", {"ovo", "tomate", "pimentão"}),
+    # ("salada", {"alface", "tomate", "pimentão", "cebola"}),
+    # ("cafe", {"cafe"})
 ]
 
 user_name = input("Digite seu nome: ").capitalize().strip()
@@ -34,7 +36,7 @@ print()
 
 while True:
     menu_options = input(
-        f"O que deseja hoje, {user_name}?\n"
+        f"O que deseja, {user_name}?\n"
         "1 - Adicionar uma nova receita\n"
         "2 - Procurar receitas\n"
         "3 - Visualizar receitas\n"
@@ -44,12 +46,28 @@ while True:
     match menu_options:
         case "1":
             while True:
-                add_recipe_name = input("Digite o nome da receita que deseja criar.\nPara sair, digite 'Q'\n: ").strip()
-                if add_recipe_name.lower() in "q":
+                recipe_name = input("Digite o nome da receita que deseja criar.\nPara sair, digite 'Q'\n: ").strip()
+
+                if recipe_name.lower() in "q":
                     break
 
-                if not add_recipe_name or (len(add_recipe_name) <= 3 or any(caractere.isdigit() for caractere in add_recipe_name)):
-                    print("Nome inválido ou muito pequeno")
+                # verificando se há nome ou se há números no meio das palavras
+                while not recipe_name or (len(recipe_name) <= 2 or any(caractere.isdigit() for caractere in recipe_name)):
+                    recipe_name = input("Sem nome. Digite um nome válido.\nPara sair, digite 'Q'\n: ").strip()
+
+                
+                
+                # recipies.append(recipe_name)
+                # print(recipies)
+
+                # print(f"Receita: {recipies[0]}")
+                # print("Ingredientes:")
+
+                # for each_recipe_name in recipies:
+                #     print(f"- {each_recipe_name}")
+                # nome da receita adicionado. colocar ingredientes
+
+                
         
         case "2":
             break
