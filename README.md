@@ -28,7 +28,7 @@ Se você quiser testar este projeto na sua máquina, siga os passos abaixo:
 1. Abra o seu terminal (ou Git Bash).
 2. Clone este repositório executando o comando:
    ```bash
-   git clone https://https://github.com/nathanmontt/assitente_geladeira.git
+   git clone https://github.com/nathanmontt/assitente_geladeira.git
 3. Execute o arquivo Python:
    ```bash
    python assitente_geladeira.py
