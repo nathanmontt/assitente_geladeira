@@ -61,12 +61,31 @@ while True:
                     recipe_ingredients.add(recipe_ingredient_names)
 
                 
+
+                """
+                # transformando a tupla de nomes em lista e salvando na primeira posição
+                temp_recipe_TUPLE = list(recipe_TUPLE)
+                temp_recipe_TUPLE.append(recipe_name)
+
+                # transformando o set em lista e salvanod na segunda posiçao
+                temp_recipe_ingredient_names = list(recipe_ingredient_names)
+                temp_recipe_TUPLE.append(temp_recipe_ingredient_names)
+
+                # adicionando tudo dentro do principal
+                all_recipies
+
+                # voltando ao que era antes
+                recipe_TUPLE = tuple(temp_recipe_TUPLE)
+                recipe_name = set(temp_recipe_ingredient_names)
+
+                print(all_recipies)
                 # print(f"Receita: {recipies[0]}")
                 # print("Ingredientes:")
 
                 # for each_recipe_TUPLE in recipies:
                 #     print(f"- {each_recipe_TUPLE}")
                 # nome da receita adicionado. colocar ingredientes
+                """
 
                 
         
