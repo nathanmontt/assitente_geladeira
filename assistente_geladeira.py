@@ -16,37 +16,25 @@ while True:
     menu_options = input(
         f"O que deseja, {user_name}?\n"
         "1 - Adicionar uma nova receita\n"
-        "2 - Procurar receitas\n"
-        "3 - Visualizar receitas\n"
-        "4 - Sair\n"
+        "2 - Visualizar receitas\n"
+        "3 - Sair\n"
         ": "
     ).strip()
 
     match menu_options:
         case "1":
             while True:
+                # criando um set vazio para guardar os ingredientes
                 recipe_ingredients = set()
 
+                # pedindo o nome da receita. ela deve estar na primeira posição da tupla
                 recipe_name = input("Digite o nome da receita que deseja criar.\nPara sair, digite 'Q'\n: ").strip()
                 if recipe_name.lower() in "q":
                     break
 
-                # verificando se há nome ou se há números no meio das palavras
+                # verificações
                 while not recipe_name or (len(recipe_name) <= 2 or any(caractere.isdigit() for caractere in recipe_name)):
                     recipe_name = input("Sem nome / Nome pequeno. Digite um nome válido.\nPara sair, digite 'Q'\n: ").strip()
-                
-                # como a tupla é imutavel:
-                #   pra adicionar os ingredientes, preciso transformar a tupla em LISTA (nome da receita)
-                #   transformar o set em LISTA (ingredientes)
-                #   dar join nos 2 acima dentro do recipe
-                #   voltar ao original
-                #   pronto
-
-                # só assim consigo colocar ele dentro da 
-                # recipe_name_LIST = list(recipe_TUPLE)
-                # recipe_name_LIST.append(recipe_TUPLE)
-                # recipe_TUPLE = tuple(recipe_name_LIST)
-
                 
                 # adicão de ingredientes
                 while True:
@@ -60,37 +48,12 @@ while True:
 
                     recipe_ingredients.add(recipe_ingredient_names)
 
-                
+                recipe_TUPLE = (recipe_name, recipe_ingredients)
+                all_recipies.append(recipe_TUPLE)
 
-                """
-                # transformando a tupla de nomes em lista e salvando na primeira posição
-                temp_recipe_TUPLE = list(recipe_TUPLE)
-                temp_recipe_TUPLE.append(recipe_name)
-
-                # transformando o set em lista e salvanod na segunda posiçao
-                temp_recipe_ingredient_names = list(recipe_ingredient_names)
-                temp_recipe_TUPLE.append(temp_recipe_ingredient_names)
-
-                # adicionando tudo dentro do principal
-                all_recipies
-
-                # voltando ao que era antes
-                recipe_TUPLE = tuple(temp_recipe_TUPLE)
-                recipe_name = set(temp_recipe_ingredient_names)
-
-                print(all_recipies)
-                # print(f"Receita: {recipies[0]}")
-                # print("Ingredientes:")
-
-                # for each_recipe_TUPLE in recipies:
-                #     print(f"- {each_recipe_TUPLE}")
-                # nome da receita adicionado. colocar ingredientes
-                """
-
-                
-        
         case "2":
-            break
+            for each_recipe_name, each_recipe_ingredientes in all_recipies[0][0], all_recipies[0][1]:
+                print(f"{each_recipe_name} - {each_recipe_ingredientes}")
         
         case "3":
             break
