@@ -35,6 +35,8 @@ while True:
                 # verificações
                 while not recipe_name or (len(recipe_name) <= 2 or any(caractere.isdigit() for caractere in recipe_name)):
                     recipe_name = input("Sem nome / Nome pequeno. Digite um nome válido.\nPara sair, digite 'Q'\n: ").strip()
+                    if recipe_name.lower() in "q":
+                        break
                 
                 # adicão de ingredientes
                 while True:
@@ -52,13 +54,21 @@ while True:
                 all_recipies.append(recipe_TUPLE)
 
         case "2":
-            for each_recipe_name, each_recipe_ingredientes in all_recipies[0][0], all_recipies[0][1]:
-                print(f"{each_recipe_name} - {each_recipe_ingredientes}")
+            for each_recipe in all_recipies:
+                recipe_name = each_recipe[0]
+                recipe_ingredients = each_recipe[1]
+
+                print(f"Receita: {recipe_name}")
+                print("Ingredientes")
+                count = 1
+
+                for each_ingredient in recipe_ingredients:
+                    print(f"{count} - {each_ingredient}")
+                    count += 1
+
+                print()
         
         case "3":
-            break
-        
-        case "4":
             break
         
         case _:
