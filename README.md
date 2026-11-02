@@ -14,7 +14,8 @@ Um programa de terminal desenvolvido em Python para cadastrar e organizar receit
 
 - [ ] **Busca por ingredientes disponíveis:** verificar quais ingredientes o usuário possui na geladeira e sugerir receitas possíveis utilizando operações de conjuntos (issubset / intersecção).
 - [ ] **Busca por receitas dispoíveis:** permitir buscar receitas já cadastradas, via nome da mesma.
-- [ ] **Remoção e edição de receitas:** permitir excluir ou modificar receitas já cadastradas.
+- [x] **Remoção de receitas:** permitir excluir receitas já cadastradas.
+- [ ] **Edição de receitas:** permitir modificar receitas já cadastradas.
 - [x] **Exportação para PDF:** gerar um livro de receitas em formato PDF utilizando a biblioteca reportlab.
 
 ## Pré-requisitos
