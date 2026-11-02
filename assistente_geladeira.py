@@ -119,8 +119,9 @@ while True:
         f"O que deseja, {user_name}?\n"
         "1 - Adicionar uma nova receita\n"
         "2 - Visualizar receitas\n"
-        "3 - Gerar PDF\n"
-        "4 - Sair\n"
+        "3 - Excluir receita\n"
+        "4 - Gerar PDF\n"
+        "5 - Sair\n"
         ": "
     ).strip()
 
@@ -172,10 +173,14 @@ while True:
                 print()
         
         case "3":
-            generate_recipe_pdf(all_recipies)
+            deleted_recipe_name = input("Digite o nome da receita que deseja excluir\n: ")
+            
 
         case "4":
+            generate_recipe_pdf(all_recipies)
+
+        case "5":
             break
-        
+
         case _:
             print("Opção não encontrada.\n")
