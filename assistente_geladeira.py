@@ -145,7 +145,6 @@ while True:
                 # adicão de ingredientes
                 while True:
                     recipe_ingredient_names = input(f"Adicione ingredientes para a receita {recipe_name}.\nDigite 'S' para sair.\n: ")
-
                     if recipe_ingredient_names.lower() in "s":
                         break
 
@@ -173,8 +172,22 @@ while True:
                 print()
         
         case "3":
-            deleted_recipe_name = input("Digite o nome da receita que deseja excluir\n: ")
-            
+            if not all_recipies:
+                print("Não há receitas cadastradas.")
+            else:
+                deleted_recipe_name = input("Digite o nome da receita que deseja excluir\n: ").strip().casefold()
+
+                recipe_found = False
+
+                for recipe in all_recipies:
+                    if recipe[0].casefold() == deleted_recipe_name:
+                        all_recipies.remove(recipe)
+                        recipe_found = True
+                        print("Receita removida com sucesso.")
+                        break
+
+                if not recipe_found:
+                    print("Receita não encontrada.")
 
         case "4":
             generate_recipe_pdf(all_recipies)
